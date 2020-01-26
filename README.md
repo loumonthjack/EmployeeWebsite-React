@@ -1,7 +1,9 @@
 # EmployeeWebsite-React
 
 cd client
-npm install 
+
+npm install
+
 npm start
 
 "/"-main route shows display of all employees 

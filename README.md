@@ -1,4 +1,5 @@
-# EmployeeWebsite-React
+# EmployeeEntryWebsite
+# React/Node/JavaScript
 
 cd client
 

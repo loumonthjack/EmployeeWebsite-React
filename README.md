@@ -14,6 +14,3 @@ npm start
 
 "/edit-employee/#"-shows form for edit of employee's information
 
-Authentication is Coming Soon ...
-
-Express Server is Coming Soon ... 

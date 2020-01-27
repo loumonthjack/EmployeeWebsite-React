@@ -27,7 +27,7 @@ class showEmployeeDetails extends Component {
 
   onDeleteClick (id) {
     axios
-      .delete('http://localhost:8082/api/employees/'+id)
+      .delete('http://localhost:5000/api/employees/'+id)
       .then(res => {
         this.props.history.push("/");
       })

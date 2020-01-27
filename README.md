@@ -1,5 +1,5 @@
 # EmployeeEntryWebsite
-# React/Node/JavaScript
+# React-Node-JavaScript
 
 cd client
 

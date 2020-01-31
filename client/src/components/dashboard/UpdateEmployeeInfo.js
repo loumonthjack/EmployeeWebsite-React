@@ -19,7 +19,7 @@ class UpdateEmployeeInfo extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get('http://localhost:5000/api/employees/'+this.props.match.params.id)
+      .get('http://localhost:5000/api/employees'+this.props.match.params.id)
       .then(res => {
         // this.setState({...this.state, employee: res.data})
         this.setState({
@@ -55,9 +55,9 @@ class UpdateEmployeeInfo extends Component {
     };
 
     axios
-      .put('http://localhost:8082/api/employees/'+this.props.match.params.id, data)
+      .put('http://localhost:5000/api/employees/'+this.props.match.params.id, data)
       .then(res => {
-        this.props.history.push('/show-employee/'+this.props.match.params.id);
+        this.props.history.push('/employee/show/'+this.props.match.params.id);
       })
       .catch(err => {
         console.log("Error in UpdateEmployeeInfo!");
@@ -72,7 +72,7 @@ class UpdateEmployeeInfo extends Component {
           <div className="row">
             <div className="col-md-8 m-auto">
               <br />
-              <Link to="/" className="btn btn-outline-warning float-left">
+              <Link to="/employees" className="btn btn-outline-warning float-left">
                   Show Employee List
               </Link>
             </div>
@@ -168,7 +168,10 @@ class UpdateEmployeeInfo extends Component {
                   onChange={this.onChange}
               />
             </div>
-            <button type="submit" className="btn btn-outline-info btn-lg btn-block">Update Employee</button>
+            <input
+                type="submit"
+                className="btn btn-outline-warning btn-block mt-4"
+            />
             </form>
           </div>
 

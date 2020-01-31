@@ -23,7 +23,7 @@ class ShowEmployeeList extends Component {
       .then(res => {
         this.setState({
           employees: res.data
-        })
+        });
       })
       .catch(err =>{
         console.log('Error from ShowEmployeeList');
@@ -32,13 +32,11 @@ class ShowEmployeeList extends Component {
 
 
   render() {
-    const { user } = this.props.auth;
     const employees = this.state.employees;
     console.log("PrintEmployee: " + employees);
     let employeeList;
-
     if(!employees) {
-      employeeList = "there is no employee recored!";
+      employeeList = "there is no employee recorded!";
     } else {
       employeeList = employees.map((employee, k) =>
         <EmployeeCard employee={employee} key={k} />
@@ -55,8 +53,8 @@ class ShowEmployeeList extends Component {
             </div>
 
             <div className="col-md-11">
-              <Link to="/create-employee" className="btn btn-outline-warning float-right">
-                + Add New Employee
+              <Link to="/employees/add" className="btn btn-outline-warning float-right">
+                Add New Employee
               </Link>
               <br />
               <br />
@@ -99,3 +97,4 @@ export default connect(
     mapStateToProps,
     { logoutUser }
 )(ShowEmployeeList);
+

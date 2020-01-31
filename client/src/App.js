@@ -49,10 +49,10 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Switch>
-                <PrivateRoute exact path='/dashboard' component={ShowEmployeeList} />
-                <PrivateRoute path='/create-employee' component={CreateEmployee} />
-                <PrivateRoute path='/edit-employee/:id' component={UpdateEmployeeInfo} />
-                <PrivateRoute path='/show-employee/:id' component={ShowEmployeeDetails} />
+                <PrivateRoute exact path='/employees' component={ShowEmployeeList} />
+                <PrivateRoute path='/employees/add' component={CreateEmployee} />
+                <PrivateRoute path='/employee/edit/:id' component={UpdateEmployeeInfo} />
+                <PrivateRoute path='/employee/show/:id' component={ShowEmployeeDetails} />
 
             </Switch>
           </div>

@@ -11,6 +11,7 @@ class showEmployeeDetails extends Component {
   }
 
   componentDidMount() {
+
     // console.log("Print id: " + this.props.match.params.id);
     axios
       .get('http://localhost:5000/api/employees/'+this.props.match.params.id)
@@ -29,7 +30,7 @@ class showEmployeeDetails extends Component {
     axios
       .delete('http://localhost:5000/api/employees/'+id)
       .then(res => {
-        this.props.history.push("/");
+        this.props.history.push("/employees");
       })
       .catch(err => {
         console.log("Error form ShowEmployeeDetails_deleteClick");
@@ -82,7 +83,7 @@ class showEmployeeDetails extends Component {
             <td>{ employee.zip }</td>
           </tr>
           <tr>
-            <th scope="row">6</th>
+            <th scope="row">7</th>
             <td>Phone</td>
             <td>{ employee.phone }</td>
           </tr>
@@ -96,7 +97,7 @@ class showEmployeeDetails extends Component {
           <div className="row">
             <div className="col-md-10 m-auto">
               <br /> <br />
-              <Link to="/" className="btn btn-outline-warning float-left">
+              <Link to="/employees" className="btn btn-outline-warning float-left">
                   Show Employee List
               </Link>
             </div>
@@ -119,7 +120,7 @@ class showEmployeeDetails extends Component {
             </div>
 
             <div className="col-md-6">
-              <Link to={`/edit-employee/${employee._id}`} className="btn btn-outline-info btn-lg btn-block">
+              <Link to={`/employee/edit/${employee._id}`} className="btn btn-outline-info btn-lg btn-block">
                     Edit Employee
               </Link>
               <br />

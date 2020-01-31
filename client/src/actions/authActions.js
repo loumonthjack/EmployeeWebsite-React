@@ -21,7 +21,7 @@ export const registerUser = (userData, history) => dispatch => {
 export const createEmployee = (employeeData, history) => dispatch => {
     axios
         .post("/api/employees/add", employeeData)
-        .then(res => history.push("/dashboard"))
+        .then(res => history.push("/employees"))
         .catch(err =>
             dispatch({
                 type: GET_ERRORS,

@@ -39,7 +39,7 @@ class CreateEmployee extends Component {
     this.props.createEmployee(newEmployee, this.props.history);
 
     axios
-      .post('http://localhost:5000/api/employees/add', newEmployee)
+      .post('http://localhost:5000/api/employees', newEmployee)
       .then(res => {
         this.setState({
           name: '',
@@ -49,8 +49,8 @@ class CreateEmployee extends Component {
           state:'',
           zip:'',
           phone:''
-        })
-        this.props.history.push('/');
+        });
+        this.props.history.push('/employees');
       })
       .catch(err => {
         console.log("Error in CreateEmployee!");
@@ -64,7 +64,7 @@ class CreateEmployee extends Component {
           <div className="row">
             <div className="col-md-8 m-auto">
               <br />
-              <Link to="/dashboard" className="btn btn-outline-warning float-left">
+              <Link to="/employees" className="btn btn-outline-warning float-left">
                   Show Employee List
               </Link>
             </div>
@@ -176,4 +176,3 @@ export default connect(
     mapStateToProps,
     { createEmployee }
 )(withRouter(CreateEmployee));
-

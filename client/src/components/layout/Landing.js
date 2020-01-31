@@ -12,7 +12,7 @@ class Landing extends Component {
               <span style={{ fontFamily: "monospace" }}>Employee Entry App</span>
             </h4>
             <p className="flow-text grey-text text-darken-1">
-              Employee Entry Form App created using the MERN Stack!
+              Employee Entry Form App!
             </p>
             <br />
             <div className="col s6">

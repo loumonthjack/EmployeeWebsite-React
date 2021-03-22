@@ -1,4 +1,4 @@
-# EmployeeEntryWebsite
+# EmployeeEntryApp
 # React-Node-JavaScript
 
 cd client
